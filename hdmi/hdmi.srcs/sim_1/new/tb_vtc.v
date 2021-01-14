@@ -23,8 +23,7 @@
 module tb_vtc(
 
     );
- 
- reg vtc_rstn_i;
+reg vtc_rstn_i;
 reg vtc_clk_i;
 wire vtc_vs_o,vtc_hs_o,vtc_de_o;  
  vtc#
