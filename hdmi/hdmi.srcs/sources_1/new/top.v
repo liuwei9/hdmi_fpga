@@ -24,7 +24,7 @@ module top(
 input rstn_i,
 input clk_i
     );
-
+wire locked;
 
 
 wire vs_o,hs_o,de_o;  
@@ -42,7 +42,7 @@ wire vs_o,hs_o,de_o;
 vtc_inst
 (
 .vtc_clk_i     (clk_out1),
-.vtc_rstn_i    (rstn_i),
+.vtc_rstn_i    (locked),
 .vtc_hs_o      (hs_o),
 .vtc_vs_o      (vs_o),
 .vtc_de_o      (de_o)
@@ -56,7 +56,7 @@ vtc_inst
     // Clock out ports
     .clk_out1(clk_out1),     // output clk_out1
     // Status and control signals
-    .resetn(resetn), // input resetn
+    .resetn(rstn_i), // input resetn
     .locked(locked),       // output locked
    // Clock in ports
     .clk_in1(clk_i));      // input clk_in1

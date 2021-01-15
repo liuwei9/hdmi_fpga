@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Jan 14 18:56:38 2021
+# Process ID: 19536
+# Current directory: E:/hdmi_fpga/hdmi
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14028 E:\hdmi_fpga\hdmi\hdmi.xpr
+# Log file: E:/hdmi_fpga/hdmi/vivado.log
+# Journal file: E:/hdmi_fpga/hdmi\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/hdmi_fpga/hdmi/hdmi.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1678330444fs"></ZoomStartTime>
-      <ZoomEndTime time="1678383345fs"></ZoomEndTime>
-      <Cursor1Time time="1678374528fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="248200001fs"></ZoomEndTime>
+      <Cursor1Time time="20200000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="224"></NameColumnWidth>
+      <NameColumnWidth column_width="219"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="30" />
    <wvobject fp_name="/tb_vtc/vtc_rstn_i" type="logic">
       <obj_property name="ElementShortName">vtc_rstn_i</obj_property>
       <obj_property name="ObjectShortName">vtc_rstn_i</obj_property>
@@ -43,5 +43,101 @@
    <wvobject fp_name="/tb_vtc/clk_out1" type="logic">
       <obj_property name="ElementShortName">clk_out1</obj_property>
       <obj_property name="ObjectShortName">clk_out1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/vtc_clk_i" type="logic">
+      <obj_property name="ElementShortName">vtc_clk_i</obj_property>
+      <obj_property name="ObjectShortName">vtc_clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/vtc_rstn_i" type="logic">
+      <obj_property name="ElementShortName">vtc_rstn_i</obj_property>
+      <obj_property name="ObjectShortName">vtc_rstn_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/vtc_hs_o" type="logic">
+      <obj_property name="ElementShortName">vtc_hs_o</obj_property>
+      <obj_property name="ObjectShortName">vtc_hs_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/vtc_vs_o" type="logic">
+      <obj_property name="ElementShortName">vtc_vs_o</obj_property>
+      <obj_property name="ObjectShortName">vtc_vs_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/vtc_de_o" type="logic">
+      <obj_property name="ElementShortName">vtc_de_o</obj_property>
+      <obj_property name="ObjectShortName">vtc_de_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/h_cnt" type="array">
+      <obj_property name="ElementShortName">h_cnt[11:0]</obj_property>
+      <obj_property name="ObjectShortName">h_cnt[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/v_cnt" type="array">
+      <obj_property name="ElementShortName">v_cnt[10:0]</obj_property>
+      <obj_property name="ObjectShortName">v_cnt[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/hs_valid" type="logic">
+      <obj_property name="ElementShortName">hs_valid</obj_property>
+      <obj_property name="ObjectShortName">hs_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/vs_valid" type="logic">
+      <obj_property name="ElementShortName">vs_valid</obj_property>
+      <obj_property name="ObjectShortName">vs_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/vtc_hs" type="logic">
+      <obj_property name="ElementShortName">vtc_hs</obj_property>
+      <obj_property name="ObjectShortName">vtc_hs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/vtc_vs" type="logic">
+      <obj_property name="ElementShortName">vtc_vs</obj_property>
+      <obj_property name="ObjectShortName">vtc_vs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/vtc_de" type="logic">
+      <obj_property name="ElementShortName">vtc_de</obj_property>
+      <obj_property name="ObjectShortName">vtc_de</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/H_ACTIVE" type="array">
+      <obj_property name="ElementShortName">H_ACTIVE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_ACTIVE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/H_BP" type="array">
+      <obj_property name="ElementShortName">H_BP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_BP[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/H_SYNC" type="array">
+      <obj_property name="ElementShortName">H_SYNC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_SYNC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/H_FP" type="array">
+      <obj_property name="ElementShortName">H_FP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_FP[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/V_ACTIVE" type="array">
+      <obj_property name="ElementShortName">V_ACTIVE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_ACTIVE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/V_BP" type="array">
+      <obj_property name="ElementShortName">V_BP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_BP[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/V_SYNC" type="array">
+      <obj_property name="ElementShortName">V_SYNC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_SYNC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/vtc_inst/V_FP" type="array">
+      <obj_property name="ElementShortName">V_FP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_FP[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/instance_name/clk_out1" type="logic">
+      <obj_property name="ElementShortName">clk_out1</obj_property>
+      <obj_property name="ObjectShortName">clk_out1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/instance_name/resetn" type="logic">
+      <obj_property name="ElementShortName">resetn</obj_property>
+      <obj_property name="ObjectShortName">resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/instance_name/locked" type="logic">
+      <obj_property name="ElementShortName">locked</obj_property>
+      <obj_property name="ObjectShortName">locked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_vtc/instance_name/clk_in1" type="logic">
+      <obj_property name="ElementShortName">clk_in1</obj_property>
+      <obj_property name="ObjectShortName">clk_in1</obj_property>
    </wvobject>
 </wave_config>
