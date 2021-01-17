@@ -54,12 +54,35 @@ always @(posedge tpg_clk_i or negedge tpg_rstn_i) begin
         v_cnt <= 11'd0;
     else if(tpg_vs_i == 1'b1)
         v_cnt <= 11'd0;
-    else if(tpg_vs_d && (~tpg_vs_i))
+    else if(tpg_hs_d && (~tpg_hs_i))
         v_cnt <= v_cnt + 1'b1;
     else
         v_cnt <= v_cnt;
 end
 
+reg[2:0] display_mode;
+reg[5:0] display_mode_cnt;
+always @(posedge tpg_clk_i or negedge tpg_rstn_i)begin
+    if(!tpg_rstn_i)
+        display_mode_cnt <= 3'b0;
+    else if(display_mode_cnt == 6'd59)
+        display_mode_cnt <= 6'd0;
+    else if(tpg_vs_d && (~tpg_vs_i))
+        display_mode_cnt <= display_mode_cnt + 1'b1;
+    else
+        display_mode_cnt <= display_mode_cnt;
+end
+always @(posedge tpg_clk_i or negedge tpg_rstn_i)begin
+    if(!tpg_rstn_i)
+        display_mode <= 3'd0;
+    else if(display_mode_cnt == 6'd59)begin
+        if(display_mode == 3'd3)
+            display_mode <= 3'd0;
+        else
+            display_mode <= display_mode + 1'b1;
+    end else
+        display_mode <= display_mode;
+end
 reg [7:0] red;
 reg [7:0] blue;
 reg [7:0] green;
@@ -69,9 +92,29 @@ always @(posedge tpg_clk_i or negedge tpg_rstn_i)begin
         green <= 8'b0000_0000;
         blue <= 8'b0000_0000;
     end else begin
-        red <= 8'b1111_1111;
-        green <= 8'b0000_0000;
-        blue <= 8'b0000_0000;
+        case (display_mode)
+        3'd0:begin
+            red <= 8'b1111_1111;
+            green <= 8'b1111_1111;
+            blue <= 8'b1111_1111;
+        end
+        3'd1:begin
+            red <= 8'b1111_1111;  
+            green <= 8'b0000_0000;
+            blue <= 8'b0000_0000;     
+        end
+        3'd2:begin
+            red <= 8'b0000_0000;  
+            green <= 8'b1111_1111;
+            blue <= 8'b0000_0000; 
+        end
+        3'd3:begin
+            red <= 8'b0000_0000;  
+            green <= 8'b0000_0000;
+            blue <= 8'b1111_1111; 
+        end
+        endcase
+        
     end
 end
 assign tpg_data_o = {red, green, blue};

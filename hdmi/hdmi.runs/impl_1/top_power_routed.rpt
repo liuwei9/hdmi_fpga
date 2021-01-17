@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Sun Jan 17 17:23:40 2021
+| Date             : Sun Jan 17 19:54:49 2021
 | Host             : LAPTOP-43UBS83S running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -52,14 +52,14 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.006 |        6 |       --- |             --- |
-| CLB Logic                |    <0.001 |      460 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |      128 |    242400 |            0.05 |
+| Clocks                   |     0.005 |        6 |       --- |             --- |
+| CLB Logic                |    <0.001 |      514 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |      155 |    242400 |            0.06 |
 |   LUT as Distributed RAM |    <0.001 |       40 |    112800 |            0.04 |
-|   Register               |    <0.001 |      166 |    484800 |            0.03 |
-|   F7/F8 Muxes            |    <0.001 |        3 |    242400 |           <0.01 |
-|   Others                 |     0.000 |       19 |       --- |             --- |
-| Signals                  |    <0.001 |      276 |       --- |             --- |
+|   Register               |    <0.001 |      184 |    484800 |            0.04 |
+|   F7/F8 Muxes            |    <0.001 |        9 |    242400 |           <0.01 |
+|   Others                 |     0.000 |       21 |       --- |             --- |
+| Signals                  |    <0.001 |      302 |       --- |             --- |
 | MMCM                     |     0.125 |        1 |        10 |           10.00 |
 | I/O                      |     0.004 |       10 |       520 |            1.92 |
 | Static Power             |     0.479 |          |           |                 |
@@ -73,7 +73,7 @@ Table of Contents
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint     |       0.950 |     0.155 |       0.007 |      0.147 |       NA    | Unspecified | NA         |
+| Vccint     |       0.950 |     0.154 |       0.007 |      0.147 |       NA    | Unspecified | NA         |
 | Vccaux     |       1.800 |     0.165 |       0.069 |      0.096 |       NA    | Unspecified | NA         |
 | Vccaux_io  |       1.800 |     0.065 |       0.000 |      0.065 |       NA    | Unspecified | NA         |
 | Vccint_io  |       0.950 |     0.018 |       0.003 |      0.015 |       NA    | Unspecified | NA         |
@@ -155,7 +155,7 @@ Table of Contents
 |   instance_name              |     0.126 |
 |     inst                     |     0.126 |
 |       clkin1_ibuf            |     0.001 |
-|   uihdmitx_inst              |     0.009 |
+|   uihdmitx_inst              |     0.008 |
 |     Inst_clk_oserdese3_10to1 |     0.002 |
 |     Inst_d0_serializer_10_1  |     0.002 |
 |     Inst_d1_serializer_10_1  |     0.002 |
