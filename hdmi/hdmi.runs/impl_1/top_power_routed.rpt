@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Sun Jan 17 19:54:49 2021
+| Date             : Sun Jan 17 20:34:31 2021
 | Host             : LAPTOP-43UBS83S running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.614        |
+| Total On-Chip Power (W)  | 5.913        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.135        |
-| Device Static (W)        | 0.479        |
+| Dynamic (W)              | 5.388        |
+| Device Static (W)        | 0.524        |
 | Effective TJA (C/W)      | 1.4          |
-| Max Ambient (C)          | 99.1         |
-| Junction Temperature (C) | 25.9         |
-| Confidence Level         | Medium       |
+| Max Ambient (C)          | 91.6         |
+| Junction Temperature (C) | 33.4         |
+| Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -52,18 +52,18 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.005 |        6 |       --- |             --- |
-| CLB Logic                |    <0.001 |      514 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |      155 |    242400 |            0.06 |
-|   LUT as Distributed RAM |    <0.001 |       40 |    112800 |            0.04 |
-|   Register               |    <0.001 |      184 |    484800 |            0.04 |
+| CLB Logic                |     0.611 |      563 |       --- |             --- |
+|   LUT as Logic           |     0.532 |      177 |    242400 |            0.07 |
+|   Register               |     0.044 |      200 |    484800 |            0.04 |
+|   LUT as Distributed RAM |     0.031 |       40 |    112800 |            0.04 |
+|   BUFG                   |     0.003 |        4 |        80 |            5.00 |
 |   F7/F8 Muxes            |    <0.001 |        9 |    242400 |           <0.01 |
 |   Others                 |     0.000 |       21 |       --- |             --- |
-| Signals                  |    <0.001 |      302 |       --- |             --- |
-| MMCM                     |     0.125 |        1 |        10 |           10.00 |
-| I/O                      |     0.004 |       10 |       520 |            1.92 |
-| Static Power             |     0.479 |          |           |                 |
-| Total                    |     0.614 |          |           |                 |
+| Signals                  |     0.325 |      345 |       --- |             --- |
+| MMCM                     |     4.102 |        1 |        10 |           10.00 |
+| I/O                      |     0.351 |       10 |       520 |            1.92 |
+| Static Power             |     0.524 |          |           |                 |
+| Total                    |     5.913 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,18 +73,18 @@ Table of Contents
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint     |       0.950 |     0.154 |       0.007 |      0.147 |       NA    | Unspecified | NA         |
-| Vccaux     |       1.800 |     0.165 |       0.069 |      0.096 |       NA    | Unspecified | NA         |
-| Vccaux_io  |       1.800 |     0.065 |       0.000 |      0.065 |       NA    | Unspecified | NA         |
-| Vccint_io  |       0.950 |     0.018 |       0.003 |      0.015 |       NA    | Unspecified | NA         |
-| Vcco33     |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccint     |       0.950 |     1.196 |       1.011 |      0.185 |       NA    | Unspecified | NA         |
+| Vccaux     |       1.800 |     2.363 |       2.265 |      0.098 |       NA    | Unspecified | NA         |
+| Vccaux_io  |       1.800 |     0.072 |       0.007 |      0.065 |       NA    | Unspecified | NA         |
+| Vccint_io  |       0.950 |     0.315 |       0.295 |      0.020 |       NA    | Unspecified | NA         |
+| Vcco33     |       3.300 |     0.017 |       0.017 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18     |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15     |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135    |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12     |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco10     |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram    |       0.950 |     0.011 |       0.000 |      0.011 |       NA    | Unspecified | NA         |
+| Vccbram    |       0.950 |     0.012 |       0.000 |      0.012 |       NA    | Unspecified | NA         |
 | MGTAVcc    |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux  |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -98,17 +98,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| User Input Data             | Confidence | Details                                               | Action                                                                                                     |
-+-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| Design implementation state | High       | Design is routed                                      |                                                                                                            |
-| Clock nodes activity        | High       | User specified more than 95% of clocks                |                                                                                                            |
-| I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
-| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
-| Device models               | High       | Device models are Production                          |                                                                                                            |
-|                             |            |                                                       |                                                                                                            |
-| Overall confidence level    | Medium     |                                                       |                                                                                                            |
-+-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 
 2. Settings
@@ -132,14 +132,9 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+-----------------------+------------------------------------------+-----------------+
-| Clock                 | Domain                                   | Constraint (ns) |
-+-----------------------+------------------------------------------+-----------------+
-| clk_i                 | clk_i                                    |            10.0 |
-| clk_out2_5x_clk_wiz_0 | instance_name/inst/clk_out2_5x_clk_wiz_0 |             6.2 |
-| clk_out5x_clk_wiz_0   | instance_name/inst/clk_out5x_clk_wiz_0   |             3.1 |
-| clk_out_clk_wiz_0     | instance_name/inst/clk_out_clk_wiz_0     |            15.4 |
-+-----------------------+------------------------------------------+-----------------+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
 
 
 3. Detailed Reports
@@ -151,15 +146,43 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| top                          |     0.135 |
-|   instance_name              |     0.126 |
-|     inst                     |     0.126 |
-|       clkin1_ibuf            |     0.001 |
-|   uihdmitx_inst              |     0.008 |
-|     Inst_clk_oserdese3_10to1 |     0.002 |
-|     Inst_d0_serializer_10_1  |     0.002 |
-|     Inst_d1_serializer_10_1  |     0.002 |
-|     Inst_d2_serializer_10_1  |     0.002 |
+| top                          |     5.388 |
+|   clk_i_IBUF_inst            |     0.067 |
+|   instance_name              |     4.138 |
+|     inst                     |     4.138 |
+|   tpg_inst                   |     0.059 |
+|   uihdmitx_inst              |     0.933 |
+|     Inst_TMDSEncoder_blue    |     0.046 |
+|     Inst_TMDSEncoder_green   |     0.025 |
+|     Inst_TMDSEncoder_red     |     0.028 |
+|     Inst_clk_oserdese3_10to1 |     0.186 |
+|     Inst_d0_serializer_10_1  |     0.247 |
+|       bit[0].mem             |     0.005 |
+|       bit[1].mem             |     0.004 |
+|       bit[2].mem             |     0.003 |
+|       bit[3].mem             |     0.004 |
+|       bit[4].mem             |     0.003 |
+|       bit[5].mem             |     0.004 |
+|       bit[6].mem             |     0.003 |
+|       bit[7].mem             |     0.003 |
+|       bit[8].mem             |     0.003 |
+|       bit[9].mem             |     0.004 |
+|     Inst_d1_serializer_10_1  |     0.198 |
+|       bit[1].mem             |     0.001 |
+|       bit[3].mem             |     0.001 |
+|       bit[5].mem             |     0.001 |
+|       bit[7].mem             |     0.002 |
+|       bit[8].mem             |     0.001 |
+|       bit[9].mem             |     0.001 |
+|     Inst_d2_serializer_10_1  |     0.205 |
+|       bit[0].mem             |     0.001 |
+|       bit[1].mem             |     0.001 |
+|       bit[3].mem             |     0.001 |
+|       bit[5].mem             |     0.001 |
+|       bit[7].mem             |     0.001 |
+|       bit[8].mem             |     0.001 |
+|       bit[9].mem             |     0.001 |
+|   vtc_inst                   |     0.191 |
 +------------------------------+-----------+
 
 

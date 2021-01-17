@@ -76,12 +76,34 @@ always @(posedge tpg_clk_i or negedge tpg_rstn_i)begin
     if(!tpg_rstn_i)
         display_mode <= 3'd0;
     else if(display_mode_cnt == 6'd59)begin
-        if(display_mode == 3'd3)
+        if(display_mode == 3'd4)
             display_mode <= 3'd0;
         else
             display_mode <= display_mode + 1'b1;
     end else
         display_mode <= display_mode;
+end
+
+reg[23:0] color_bar;
+always @(posedge tpg_clk_i)begin
+    if(h_cnt == 12'd0)
+        color_bar <= 24'hff0000;
+    else if(h_cnt == 12'd127)
+        color_bar <= 24'h00ff00;
+    else if(h_cnt == 12'd255)
+        color_bar <= 24'h0000ff;
+    else if(h_cnt == 12'd382)
+        color_bar <= 24'hff00ff;
+    else if(h_cnt == 12'd511)   
+       color_bar <= 24'hffff00;
+    else if(h_cnt == 12'd639)   
+       color_bar <= 24'h00ffff;
+    else if(h_cnt == 12'd767)   
+       color_bar <= 24'hffffff;
+    else if(h_cnt == 12'd895)   
+       color_bar <= 24'h000000;
+    else
+        color_bar <= color_bar;
 end
 reg [7:0] red;
 reg [7:0] blue;
@@ -112,6 +134,16 @@ always @(posedge tpg_clk_i or negedge tpg_rstn_i)begin
             red <= 8'b0000_0000;  
             green <= 8'b0000_0000;
             blue <= 8'b1111_1111; 
+        end
+        3'd4:begin
+            red <= color_bar[23:16];  
+            green <= color_bar[15:8];
+            blue <= color_bar[7:0]; 
+        end
+        default :begin
+            red <= 8'b1111_1111;
+            green <= 8'b1111_1111;
+            blue <= 8'b1111_1111;
         end
         endcase
         
