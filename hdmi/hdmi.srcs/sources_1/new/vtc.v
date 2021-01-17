@@ -32,11 +32,11 @@ parameter V_SYNC    =   6,
 parameter V_FP      =   3  
 )
 (
-input vtc_clk_i,
-input vtc_rstn_i,
-output reg vtc_hs_o,
-output reg vtc_vs_o,
-output reg vtc_de_o
+input           vtc_clk_i,
+input           vtc_rstn_i,
+output reg      vtc_hs_o,
+output reg      vtc_vs_o,
+output reg      vtc_de_o
     );
 `define H_TOTAL  (H_ACTIVE + H_BP + H_SYNC + H_FP)
 `define V_TOTAL  (V_ACTIVE + V_BP + V_SYNC + V_FP)

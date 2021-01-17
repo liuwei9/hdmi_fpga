@@ -1,0 +1,55 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Sun Jan 17 17:23:38 2021
+| Host         : LAPTOP-43UBS83S running 64-bit major release  (build 9200)
+| Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
+| Design       : top
+| Device       : xcku040-ffva1156-2-i
+| Speed File   : -2
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 4
++---------+----------+-------------------------------+------------+
+| Rule    | Severity | Description                   | Violations |
++---------+----------+-------------------------------+------------+
+| BSCK-11 | Warning  | OSERDESE3_parallel_clock_nets | 4          |
++---------+----------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+BSCK-11#1 Warning
+OSERDESE3_parallel_clock_nets  
+OSERDESE3 cell uihdmitx_inst/Inst_clk_oserdese3_10to1/OSERDESE3_inst has sub-optimal clocking topology for pins uihdmitx_inst/Inst_clk_oserdese3_10to1/OSERDESE3_inst/CLK (driver: instance_name/inst/clkout3_buf) and uihdmitx_inst/Inst_clk_oserdese3_10to1/OSERDESE3_inst/CLKDIV (driver: instance_name/inst/clkout2_buf). These pins should be driven by parallel global clock buffers by utilizing BUFGCE_DIV cell for the OSERDESE3 CLKDIV pin.
+Related violations: <none>
+
+BSCK-11#2 Warning
+OSERDESE3_parallel_clock_nets  
+OSERDESE3 cell uihdmitx_inst/Inst_d0_serializer_10_1/OSERDESE3_inst has sub-optimal clocking topology for pins uihdmitx_inst/Inst_d0_serializer_10_1/OSERDESE3_inst/CLK (driver: instance_name/inst/clkout3_buf) and uihdmitx_inst/Inst_d0_serializer_10_1/OSERDESE3_inst/CLKDIV (driver: instance_name/inst/clkout2_buf). These pins should be driven by parallel global clock buffers by utilizing BUFGCE_DIV cell for the OSERDESE3 CLKDIV pin.
+Related violations: <none>
+
+BSCK-11#3 Warning
+OSERDESE3_parallel_clock_nets  
+OSERDESE3 cell uihdmitx_inst/Inst_d1_serializer_10_1/OSERDESE3_inst has sub-optimal clocking topology for pins uihdmitx_inst/Inst_d1_serializer_10_1/OSERDESE3_inst/CLK (driver: instance_name/inst/clkout3_buf) and uihdmitx_inst/Inst_d1_serializer_10_1/OSERDESE3_inst/CLKDIV (driver: instance_name/inst/clkout2_buf). These pins should be driven by parallel global clock buffers by utilizing BUFGCE_DIV cell for the OSERDESE3 CLKDIV pin.
+Related violations: <none>
+
+BSCK-11#4 Warning
+OSERDESE3_parallel_clock_nets  
+OSERDESE3 cell uihdmitx_inst/Inst_d2_serializer_10_1/OSERDESE3_inst has sub-optimal clocking topology for pins uihdmitx_inst/Inst_d2_serializer_10_1/OSERDESE3_inst/CLK (driver: instance_name/inst/clkout3_buf) and uihdmitx_inst/Inst_d2_serializer_10_1/OSERDESE3_inst/CLKDIV (driver: instance_name/inst/clkout2_buf). These pins should be driven by parallel global clock buffers by utilizing BUFGCE_DIV cell for the OSERDESE3 CLKDIV pin.
+Related violations: <none>
+
+
