@@ -123,7 +123,6 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
-  set_param xicom.use_bs_reader 1
   set_param simulator.modelsimInstallPath C:/modeltech64_10.4/win64
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xcku040-ffva1156-2-i

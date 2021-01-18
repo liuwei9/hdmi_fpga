@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Sun Jan 17 20:34:31 2021
+| Date             : Mon Jan 18 10:09:37 2021
 | Host             : LAPTOP-43UBS83S running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 5.913        |
+| Total On-Chip Power (W)  | 6.840        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 5.388        |
-| Device Static (W)        | 0.524        |
+| Dynamic (W)              | 6.306        |
+| Device Static (W)        | 0.534        |
 | Effective TJA (C/W)      | 1.4          |
-| Max Ambient (C)          | 91.6         |
-| Junction Temperature (C) | 33.4         |
+| Max Ambient (C)          | 90.3         |
+| Junction Temperature (C) | 34.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,18 +52,17 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| CLB Logic                |     0.611 |      563 |       --- |             --- |
-|   LUT as Logic           |     0.532 |      177 |    242400 |            0.07 |
-|   Register               |     0.044 |      200 |    484800 |            0.04 |
+| CLB Logic                |     1.118 |      846 |       --- |             --- |
+|   LUT as Logic           |     1.019 |      326 |    242400 |            0.13 |
+|   Register               |     0.063 |      311 |    484800 |            0.06 |
 |   LUT as Distributed RAM |     0.031 |       40 |    112800 |            0.04 |
 |   BUFG                   |     0.003 |        4 |        80 |            5.00 |
-|   F7/F8 Muxes            |    <0.001 |        9 |    242400 |           <0.01 |
 |   Others                 |     0.000 |       21 |       --- |             --- |
-| Signals                  |     0.325 |      345 |       --- |             --- |
+| Signals                  |     0.736 |      571 |       --- |             --- |
 | MMCM                     |     4.102 |        1 |        10 |           10.00 |
 | I/O                      |     0.351 |       10 |       520 |            1.92 |
-| Static Power             |     0.524 |          |           |                 |
-| Total                    |     5.913 |          |           |                 |
+| Static Power             |     0.534 |          |           |                 |
+| Total                    |     6.840 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,10 +72,10 @@ Table of Contents
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint     |       0.950 |     1.196 |       1.011 |      0.185 |       NA    | Unspecified | NA         |
-| Vccaux     |       1.800 |     2.363 |       2.265 |      0.098 |       NA    | Unspecified | NA         |
+| Vccint     |       0.950 |     2.170 |       1.977 |      0.193 |       NA    | Unspecified | NA         |
+| Vccaux     |       1.800 |     2.364 |       2.265 |      0.099 |       NA    | Unspecified | NA         |
 | Vccaux_io  |       1.800 |     0.072 |       0.007 |      0.065 |       NA    | Unspecified | NA         |
-| Vccint_io  |       0.950 |     0.315 |       0.295 |      0.020 |       NA    | Unspecified | NA         |
+| Vccint_io  |       0.950 |     0.316 |       0.295 |      0.020 |       NA    | Unspecified | NA         |
 | Vcco33     |       3.300 |     0.017 |       0.017 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18     |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -84,7 +83,7 @@ Table of Contents
 | Vcco135    |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12     |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco10     |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram    |       0.950 |     0.012 |       0.000 |      0.012 |       NA    | Unspecified | NA         |
+| Vccbram    |       0.950 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | MGTAVcc    |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux  |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,43 +145,49 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| top                          |     5.388 |
+| top                          |     6.306 |
 |   clk_i_IBUF_inst            |     0.067 |
-|   instance_name              |     4.138 |
-|     inst                     |     4.138 |
-|   tpg_inst                   |     0.059 |
-|   uihdmitx_inst              |     0.933 |
-|     Inst_TMDSEncoder_blue    |     0.046 |
-|     Inst_TMDSEncoder_green   |     0.025 |
-|     Inst_TMDSEncoder_red     |     0.028 |
-|     Inst_clk_oserdese3_10to1 |     0.186 |
-|     Inst_d0_serializer_10_1  |     0.247 |
+|   instance_name              |     4.141 |
+|     inst                     |     4.141 |
+|   tpg_inst                   |     0.066 |
+|   uihdmitx_inst              |     1.865 |
+|     Inst_TMDSEncoder_blue    |     0.385 |
+|     Inst_TMDSEncoder_green   |     0.351 |
+|     Inst_TMDSEncoder_red     |     0.283 |
+|     Inst_clk_oserdese3_10to1 |     0.172 |
+|     Inst_d0_serializer_10_1  |     0.252 |
 |       bit[0].mem             |     0.005 |
 |       bit[1].mem             |     0.004 |
 |       bit[2].mem             |     0.003 |
-|       bit[3].mem             |     0.004 |
+|       bit[3].mem             |     0.003 |
 |       bit[4].mem             |     0.003 |
-|       bit[5].mem             |     0.004 |
-|       bit[6].mem             |     0.003 |
-|       bit[7].mem             |     0.003 |
-|       bit[8].mem             |     0.003 |
-|       bit[9].mem             |     0.004 |
-|     Inst_d1_serializer_10_1  |     0.198 |
-|       bit[1].mem             |     0.001 |
-|       bit[3].mem             |     0.001 |
-|       bit[5].mem             |     0.001 |
-|       bit[7].mem             |     0.002 |
-|       bit[8].mem             |     0.001 |
-|       bit[9].mem             |     0.001 |
-|     Inst_d2_serializer_10_1  |     0.205 |
+|       bit[5].mem             |     0.003 |
+|       bit[6].mem             |     0.004 |
+|       bit[7].mem             |     0.004 |
+|       bit[8].mem             |     0.004 |
+|       bit[9].mem             |     0.003 |
+|     Inst_d1_serializer_10_1  |     0.213 |
 |       bit[0].mem             |     0.001 |
 |       bit[1].mem             |     0.001 |
+|       bit[2].mem             |     0.002 |
 |       bit[3].mem             |     0.001 |
 |       bit[5].mem             |     0.001 |
+|       bit[6].mem             |     0.001 |
 |       bit[7].mem             |     0.001 |
 |       bit[8].mem             |     0.001 |
 |       bit[9].mem             |     0.001 |
-|   vtc_inst                   |     0.191 |
+|     Inst_d2_serializer_10_1  |     0.209 |
+|       bit[0].mem             |     0.001 |
+|       bit[1].mem             |     0.001 |
+|       bit[2].mem             |     0.001 |
+|       bit[3].mem             |     0.001 |
+|       bit[4].mem             |     0.001 |
+|       bit[5].mem             |     0.001 |
+|       bit[6].mem             |     0.001 |
+|       bit[7].mem             |     0.001 |
+|       bit[8].mem             |     0.001 |
+|       bit[9].mem             |     0.001 |
+|   vtc_inst                   |     0.167 |
 +------------------------------+-----------+
 
 

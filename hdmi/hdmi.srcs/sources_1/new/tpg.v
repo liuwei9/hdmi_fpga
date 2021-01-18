@@ -76,7 +76,7 @@ always @(posedge tpg_clk_i or negedge tpg_rstn_i)begin
     if(!tpg_rstn_i)
         display_mode <= 3'd0;
     else if(display_mode_cnt == 6'd59)begin
-        if(display_mode == 3'd4)
+        if(display_mode == 3'd5)
             display_mode <= 3'd0;
         else
             display_mode <= display_mode + 1'b1;
@@ -139,6 +139,11 @@ always @(posedge tpg_clk_i or negedge tpg_rstn_i)begin
             red <= color_bar[23:16];  
             green <= color_bar[15:8];
             blue <= color_bar[7:0]; 
+        end
+        3'd5:begin
+            red <= h_cnt[7:0];  
+            green <= h_cnt[7:0];
+            blue <= h_cnt[7:0]; 
         end
         default :begin
             red <= 8'b1111_1111;
