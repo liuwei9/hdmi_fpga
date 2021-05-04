@@ -1,0 +1,479 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon May  3 19:42:40 2021
+# Process ID: 16876
+# Current directory: D:/hdmi_fpga/hdmi
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2216 D:\hdmi_fpga\hdmi\hdmi.xpr
+# Log file: D:/hdmi_fpga/hdmi/vivado.log
+# Journal file: D:/hdmi_fpga/hdmi\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/hdmi_fpga/hdmi/hdmi.xpr
+INFO: [Project 1-313] Project file moved from 'E:/hdmi_fpga/hdmi' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 1110.324 ; gain = 0.000
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Mon May  3 19:43:36 2021] Launched synth_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/synth_1/runme.log
+[Mon May  3 19:43:36 2021] Launched impl_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.2
+  **** Build date : Nov 18 2020 at 10:01:48
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 04 2020-05:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1119.676 ; gain = 8.242
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249855457
+open_hw_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2672.090 ; gain = 1552.414
+set_property PROGRAM.FILE {D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/top.bit} [get_hw_devices xcku040_0]
+current_hw_device [get_hw_devices xcku040_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xcku040_0] 0]
+INFO: [Labtools 27-2302] Device xcku040 (JTAG device index = 0) is programmed with a design that has 2 VIO core(s).
+set_property PROBES.FILE {} [get_hw_devices xcku040_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xcku040_0]
+set_property PROGRAM.FILE {D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/top.bit} [get_hw_devices xcku040_0]
+program_hw_devices [get_hw_devices xcku040_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2734.809 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xcku040_0] 0]
+INFO: [Labtools 27-1434] Device xcku040 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Mon May  3 20:10:28 2021] Launched impl_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xcku040-ffva1156-2-i
+INFO: [Device 21-403] Loading part xcku040-ffva1156-2-i
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 3307.137 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 3314.527 ; gain = 575.781
+INFO: [Common 17-344] 'open_run' was cancelled
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+launch_runs synth_1 -jobs 6
+[Mon May  3 20:11:03 2021] Launched synth_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 6
+[Mon May  3 20:12:58 2021] Launched impl_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/runme.log
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'E:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_vtc' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_vtc_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/vtc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vtc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sim_1/new/tb_vtc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_vtc
+INFO: [VRFC 10-2458] undeclared symbol clk_out1, assumed default net type wire [D:/hdmi_fpga/hdmi/hdmi.srcs/sim_1/new/tb_vtc.v:42]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+"xelab -wto 62adf7a481544d2aa515056f0e660fbb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_vtc_behav xil_defaultlib.tb_vtc xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: E:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 62adf7a481544d2aa515056f0e660fbb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_vtc_behav xil_defaultlib.tb_vtc xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'clk_out1' on this module [D:/hdmi_fpga/hdmi/hdmi.srcs/sim_1/new/tb_vtc.v:62]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property top top [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/hdmi_fpga/hdmi/hdmi.srcs/sim_1/new/tb_top.v w ]
+add_files -fileset sim_1 D:/hdmi_fpga/hdmi/hdmi.srcs/sim_1/new/tb_top.v
+update_compile_order -fileset sim_1
+set_property top tb_top [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'E:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/oserdese3_10to1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module oserdese3_10to1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/tpg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tpg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/uihdmitx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uihdmitx
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sim_1/new/tb_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+"xvhdl --incr --relax -prj tb_top_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/TMDSEncoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TMDSEncoder'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+"xelab -wto 62adf7a481544d2aa515056f0e660fbb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: E:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 62adf7a481544d2aa515056f0e660fbb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2538] module instantiation should have an instance name [D:/hdmi_fpga/hdmi/hdmi.srcs/sim_1/new/tb_top.v:45]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'E:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/oserdese3_10to1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module oserdese3_10to1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/tpg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tpg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/uihdmitx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uihdmitx
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/vtc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vtc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdmi_fpga/hdmi/hdmi.srcs/sim_1/new/tb_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+"xvhdl --incr --relax -prj tb_top_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+"xelab -wto 62adf7a481544d2aa515056f0e660fbb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: E:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 62adf7a481544d2aa515056f0e660fbb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 80 differs from formal bit length 10 for port 'txdata' [D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/uihdmitx.v:84]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling module xil_defaultlib.vtc
+Compiling module xil_defaultlib.tpg
+Compiling architecture behavioral of entity xil_defaultlib.TMDSEncoder [tmdsencoder_default]
+Compiling module unisims_ver.RAM32X1D
+Compiling module unisims_ver.OSERDESE3(DATA_WIDTH=4)
+Compiling module unisims_ver.OBUFDS
+Compiling module xil_defaultlib.oserdese3_10to1_default
+Compiling module xil_defaultlib.uihdmitx
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.MMCME3_ADV(CLKFBOUT_MULT_F=9.75,...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon May  3 20:56:55 2021...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 3746.812 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/hdmi_fpga/hdmi/hdmi.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {D:/hdmi_fpga/hdmi/tb_vtc_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config D:/hdmi_fpga/hdmi/tb_vtc_behav.wcfg
+WARNING: Simulation object /tb_vtc/vtc_rstn_i was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_clk_i was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_vs_o was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_hs_o was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_de_o was not found in the design.
+WARNING: Simulation object /tb_vtc/clk_out1 was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/vtc_clk_i was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/vtc_rstn_i was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/vtc_hs_o was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/vtc_vs_o was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/vtc_de_o was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/h_cnt was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/v_cnt was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/hs_valid was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/vs_valid was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/vtc_hs was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/vtc_vs was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/vtc_de was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/H_ACTIVE was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/H_BP was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/H_SYNC was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/H_FP was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/V_ACTIVE was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/V_BP was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/V_SYNC was not found in the design.
+WARNING: Simulation object /tb_vtc/vtc_inst/V_FP was not found in the design.
+WARNING: Simulation object /tb_vtc/instance_name/clk_out1 was not found in the design.
+WARNING: Simulation object /tb_vtc/instance_name/resetn was not found in the design.
+WARNING: Simulation object /tb_vtc/instance_name/locked was not found in the design.
+WARNING: Simulation object /tb_vtc/instance_name/clk_in1 was not found in the design.
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 3760.750 ; gain = 13.938
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/clk_i}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/rstn_i}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/HDMI_TX_P}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/HDMI_TX_N}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/HDMI_CLK_P}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/HDMI_CLK_N}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/top_inst/uihdmitx_inst/Inst_clk_oserdese3_10to1/pclk}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/top_inst/uihdmitx_inst/Inst_clk_oserdese3_10to1/clkdiv2}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/top_inst/uihdmitx_inst/Inst_clk_oserdese3_10to1/txdata}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/top_inst/uihdmitx_inst/Inst_clk_oserdese3_10to1/clkdiv4}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/top_inst/uihdmitx_inst/Inst_clk_oserdese3_10to1/tx_data}} 
+current_wave_config {tb_vtc_behav.wcfg}
+tb_vtc_behav.wcfg
+add_wave {{/tb_top/top_inst/uihdmitx_inst/Inst_clk_oserdese3_10to1/oserdes_out}} 
+save_wave_config {D:/hdmi_fpga/hdmi/tb_vtc_behav.wcfg}
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 s
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 4532.812 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 s
+run: Time (s): cpu = 00:02:41 ; elapsed = 00:04:50 . Memory (MB): peak = 5037.008 ; gain = 504.195
+current_wave_config {tb_vtc_behav.wcfg}
+D:/hdmi_fpga/hdmi/tb_vtc_behav.wcfg
+add_wave {{/tb_top/top_inst/tpg_inst/tpg_data_o}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 s
+run: Time (s): cpu = 00:01:10 ; elapsed = 00:06:27 . Memory (MB): peak = 5037.008 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Mon May  3 21:24:39 2021] Launched synth_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/synth_1/runme.log
+[Mon May  3 21:24:39 2021] Launched impl_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.2
+  **** Build date : Nov 18 2020 at 10:01:48
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 04 2020-05:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 5037.008 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249855457
+set_property PROGRAM.FILE {D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/top.bit} [get_hw_devices xcku040_0]
+current_hw_device [get_hw_devices xcku040_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xcku040_0] 0]
+INFO: [Labtools 27-2302] Device xcku040 (JTAG device index = 0) is programmed with a design that has 2 VIO core(s).
+set_property PROBES.FILE {} [get_hw_devices xcku040_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xcku040_0]
+set_property PROGRAM.FILE {D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/top.bit} [get_hw_devices xcku040_0]
+program_hw_devices [get_hw_devices xcku040_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 5037.008 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xcku040_0] 0]
+INFO: [Labtools 27-1434] Device xcku040 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ila_0
+set_property -dict [list CONFIG.C_PROBE1_WIDTH {5} CONFIG.C_PROBE0_WIDTH {10} CONFIG.C_NUM_OF_PROBES {5}] [get_ips ila_0]
+generate_target {instantiation_template} [get_files d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
+generate_target all [get_files  d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/ila_0/ila_0.xci]
+launch_runs ila_0_synth_1 -jobs 6
+[Mon May  3 21:31:59 2021] Launched ila_0_synth_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/ila_0_synth_1/runme.log
+export_simulation -of_objects [get_files d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/ila_0/ila_0.xci] -directory D:/hdmi_fpga/hdmi/hdmi.ip_user_files/sim_scripts -ip_user_files_dir D:/hdmi_fpga/hdmi/hdmi.ip_user_files -ipstatic_source_dir D:/hdmi_fpga/hdmi/hdmi.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/modeltech64_10.4/vivado2020_1_lib} {questa=D:/hdmi_fpga/hdmi/hdmi.cache/compile_simlib/questa} {riviera=D:/hdmi_fpga/hdmi/hdmi.cache/compile_simlib/riviera} {activehdl=D:/hdmi_fpga/hdmi/hdmi.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/hdmi_fpga/hdmi/hdmi.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Mon May  3 21:33:23 2021] Launched ila_0_synth_1, synth_1...
+Run output will be captured here:
+ila_0_synth_1: D:/hdmi_fpga/hdmi/hdmi.runs/ila_0_synth_1/runme.log
+synth_1: D:/hdmi_fpga/hdmi/hdmi.runs/synth_1/runme.log
+[Mon May  3 21:33:23 2021] Launched impl_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Mon May  3 21:55:40 2021] Launched synth_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/synth_1/runme.log
+[Mon May  3 21:55:40 2021] Launched impl_1...
+Run output will be captured here: D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/runme.log
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May  3 22:44:32 2021...

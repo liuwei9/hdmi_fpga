@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "E:/hdmi_fpga/hdmi/hdmi.runs/synth_1/top.tcl"
+  variable script "D:/hdmi_fpga/hdmi/hdmi.runs/synth_1/top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param simulator.modelsimInstallPath C:/modeltech64_10.4/win64
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xcku040-ffva1156-2-i
 
@@ -78,27 +79,27 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir E:/hdmi_fpga/hdmi/hdmi.cache/wt [current_project]
-set_property parent.project_path E:/hdmi_fpga/hdmi/hdmi.xpr [current_project]
+set_property webtalk.parent_dir D:/hdmi_fpga/hdmi/hdmi.cache/wt [current_project]
+set_property parent.project_path D:/hdmi_fpga/hdmi/hdmi.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo e:/hdmi_fpga/hdmi/hdmi.cache/ip [current_project]
+set_property ip_output_repo d:/hdmi_fpga/hdmi/hdmi.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  E:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/oserdese3_10to1.v
-  E:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/tpg.v
-  E:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/uihdmitx.v
-  E:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/vtc.v
-  E:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/top.v
+  D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/oserdese3_10to1.v
+  D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/tpg.v
+  D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/uihdmitx.v
+  D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/vtc.v
+  D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/top.v
 }
-read_vhdl -library xil_defaultlib E:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/TMDSEncoder.vhd
-read_ip -quiet E:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all e:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all e:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all e:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_vhdl -library xil_defaultlib D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/new/TMDSEncoder.vhd
+read_ip -quiet D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -109,8 +110,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc E:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc
-set_property used_in_implementation false [get_files E:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc]
+read_xdc D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc
+set_property used_in_implementation false [get_files D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

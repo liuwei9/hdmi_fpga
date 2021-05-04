@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Jan 18 10:06:46 2021
-# Process ID: 8440
-# Current directory: E:/hdmi_fpga/hdmi/hdmi.runs/synth_1
+# Start of session at: Mon May  3 23:17:28 2021
+# Process ID: 2680
+# Current directory: D:/hdmi_fpga/hdmi/hdmi.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: E:/hdmi_fpga/hdmi/hdmi.runs/synth_1/top.vds
-# Journal file: E:/hdmi_fpga/hdmi/hdmi.runs/synth_1\vivado.jou
+# Log file: D:/hdmi_fpga/hdmi/hdmi.runs/synth_1/top.vds
+# Journal file: D:/hdmi_fpga/hdmi/hdmi.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace

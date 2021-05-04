@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "E:/hdmi_fpga/hdmi/hdmi.runs/impl_1/top.tcl"
+  variable script "D:/hdmi_fpga/hdmi/hdmi.runs/impl_1/top.tcl"
   variable category "vivado_impl"
 }
 
@@ -123,24 +123,24 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
-  set_param simulator.modelsimInstallPath C:/modeltech64_10.4/win64
+  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xcku040-ffva1156-2-i
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir E:/hdmi_fpga/hdmi/hdmi.cache/wt [current_project]
-  set_property parent.project_path E:/hdmi_fpga/hdmi/hdmi.xpr [current_project]
-  set_property ip_output_repo E:/hdmi_fpga/hdmi/hdmi.cache/ip [current_project]
+  set_property webtalk.parent_dir D:/hdmi_fpga/hdmi/hdmi.cache/wt [current_project]
+  set_property parent.project_path D:/hdmi_fpga/hdmi/hdmi.xpr [current_project]
+  set_property ip_output_repo D:/hdmi_fpga/hdmi/hdmi.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet E:/hdmi_fpga/hdmi/hdmi.runs/synth_1/top.dcp
-  read_ip -quiet E:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  add_files -quiet D:/hdmi_fpga/hdmi/hdmi.runs/synth_1/top.dcp
+  read_ip -quiet D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc E:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc
+  read_xdc D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
