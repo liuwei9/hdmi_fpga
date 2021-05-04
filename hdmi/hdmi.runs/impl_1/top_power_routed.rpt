@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Tue May  4 22:58:17 2021
+| Date             : Tue May  4 23:56:44 2021
 | Host             : LAPTOP-POK8F54O running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 7.510        |
+| Total On-Chip Power (W)  | 7.274        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 6.969        |
-| Device Static (W)        | 0.541        |
+| Dynamic (W)              | 6.736        |
+| Device Static (W)        | 0.538        |
 | Effective TJA (C/W)      | 1.4          |
-| Max Ambient (C)          | 89.3         |
-| Junction Temperature (C) | 35.7         |
+| Max Ambient (C)          | 89.7         |
+| Junction Temperature (C) | 35.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| CLB Logic      |     1.208 |      683 |       --- |             --- |
-|   LUT as Logic |     1.102 |      285 |    242400 |            0.12 |
-|   Register     |     0.103 |      298 |    484800 |            0.06 |
+| CLB Logic      |     1.156 |      686 |       --- |             --- |
+|   LUT as Logic |     1.059 |      291 |    242400 |            0.12 |
+|   Register     |     0.094 |      296 |    484800 |            0.06 |
 |   BUFG         |     0.003 |        4 |        80 |            5.00 |
+|   F7/F8 Muxes  |    <0.001 |        1 |    242400 |           <0.01 |
 |   Others       |     0.000 |       21 |       --- |             --- |
-| Signals        |     1.126 |      502 |       --- |             --- |
+| Signals        |     1.131 |      500 |       --- |             --- |
 | MMCM           |     4.102 |        1 |        10 |           10.00 |
-| I/O            |     0.533 |       10 |       520 |            1.92 |
-| Static Power   |     0.541 |          |           |                 |
-| Total          |     7.510 |          |           |                 |
+| I/O            |     0.347 |       10 |       520 |            1.92 |
+| Static Power   |     0.538 |          |           |                 |
+| Total          |     7.274 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,10 +72,10 @@ Table of Contents
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint     |       0.950 |     2.681 |       2.483 |      0.198 |       NA    | Unspecified | NA         |
+| Vccint     |       0.950 |     2.630 |       2.434 |      0.196 |       NA    | Unspecified | NA         |
 | Vccaux     |       1.800 |     2.364 |       2.265 |      0.099 |       NA    | Unspecified | NA         |
-| Vccaux_io  |       1.800 |     0.167 |       0.102 |      0.065 |       NA    | Unspecified | NA         |
-| Vccint_io  |       0.950 |     0.328 |       0.307 |      0.021 |       NA    | Unspecified | NA         |
+| Vccaux_io  |       1.800 |     0.070 |       0.005 |      0.065 |       NA    | Unspecified | NA         |
+| Vccint_io  |       0.950 |     0.316 |       0.295 |      0.021 |       NA    | Unspecified | NA         |
 | Vcco33     |       3.300 |     0.017 |       0.017 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18     |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -144,20 +145,20 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| top                          |     6.969 |
+| top                          |     6.736 |
 |   clk_i_IBUF_inst            |     0.067 |
-|   instance_name              |     4.125 |
-|     inst                     |     4.125 |
-|   tpg_inst                   |     0.060 |
-|   uihdmitx_inst              |     2.577 |
-|     Inst_TMDSEncoder_blue    |     0.433 |
-|     Inst_TMDSEncoder_green   |     0.344 |
-|     Inst_TMDSEncoder_red     |     0.319 |
-|     Inst_clk_oserdese3_10to1 |     0.187 |
-|     Inst_d0_serializer_10_1  |     0.386 |
-|     Inst_d1_serializer_10_1  |     0.443 |
-|     Inst_d2_serializer_10_1  |     0.457 |
-|   vtc_inst                   |     0.140 |
+|   instance_name              |     4.139 |
+|     inst                     |     4.139 |
+|   tpg_inst                   |     0.072 |
+|   uihdmitx_inst              |     2.292 |
+|     Inst_TMDSEncoder_blue    |     0.335 |
+|     Inst_TMDSEncoder_green   |     0.301 |
+|     Inst_TMDSEncoder_red     |     0.414 |
+|     Inst_clk_oserdese3_10to1 |     0.155 |
+|     Inst_d0_serializer_10_1  |     0.392 |
+|     Inst_d1_serializer_10_1  |     0.368 |
+|     Inst_d2_serializer_10_1  |     0.320 |
+|   vtc_inst                   |     0.166 |
 +------------------------------+-----------+
 
 

@@ -51,8 +51,8 @@ wire intRst = !RSTn_i;
 TMDSEncoder Inst_TMDSEncoder_red
      (
      .D_I(RED),
-     .C0_I(1'b0),
-     .C1_I(1'b0),
+     .C0_I(HS_i),
+     .C1_I(VS_i),
      .DE_I(VDE_i),
      .CLK_I(PCLKX1_i),
      .D_O(intTmdsRed)
@@ -60,8 +60,8 @@ TMDSEncoder Inst_TMDSEncoder_red
 TMDSEncoder Inst_TMDSEncoder_green
      (
      .D_I(GREEN),
-     .C0_I(1'b0),
-     .C1_I(1'b0),
+     .C0_I(HS_i),
+     .C1_I(VS_i),
      .DE_I(VDE_i),
      .CLK_I(PCLKX1_i),
      .D_O(intTmdsGreen)
@@ -84,8 +84,8 @@ oserdese3_10to1 Inst_clk_oserdese3_10to1
 .txdata("1111100000"),
 .txrst(intRst),
 .pclk(PCLKX1_i),
-.clkdiv2(PCLKX5_i),
-.clkdiv4(PCLKX2_5_i),
+.pclk5x(PCLKX5_i),
+.pclk2_5x(PCLKX2_5_i),
 .tx_p(TMDS_TX_CLK_P),
 .tx_n(TMDS_TX_CLK_N)
 ); 
@@ -94,8 +94,8 @@ oserdese3_10to1 Inst_d2_serializer_10_1
 .txdata(intTmdsRed),
 .txrst(intRst),
 .pclk(PCLKX1_i),
-.clkdiv2(PCLKX5_i),
-.clkdiv4(PCLKX2_5_i),
+.pclk5x(PCLKX5_i),
+.pclk2_5x(PCLKX2_5_i),
 .tx_p(TMDS_TX_P[2]),
 .tx_n(TMDS_TX_N[2])
 );
@@ -105,8 +105,8 @@ oserdese3_10to1 Inst_d1_serializer_10_1
 .txdata(intTmdsGreen),
 .txrst(intRst),
 .pclk(PCLKX1_i),
-.clkdiv2(PCLKX5_i),
-.clkdiv4(PCLKX2_5_i),
+.pclk5x(PCLKX5_i),
+.pclk2_5x(PCLKX2_5_i),
 .tx_p(TMDS_TX_P[1]),
 .tx_n(TMDS_TX_N[1])
 );
@@ -116,8 +116,8 @@ oserdese3_10to1 Inst_d0_serializer_10_1
 .txdata(intTmdsBlue),
 .txrst(intRst),
 .pclk(PCLKX1_i),
-.clkdiv2(PCLKX5_i),
-.clkdiv4(PCLKX2_5_i),
+.pclk5x(PCLKX5_i),
+.pclk2_5x(PCLKX2_5_i),
 .tx_p(TMDS_TX_P[0]),
 .tx_n(TMDS_TX_N[0])
 );

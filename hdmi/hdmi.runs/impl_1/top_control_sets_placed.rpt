@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue May  4 22:57:15 2021
+| Date         : Tue May  4 23:55:44 2021
 | Host         : LAPTOP-POK8F54O running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    19 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    26 |
+| Unused register locations in slices containing registers |    24 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -44,8 +44,8 @@ Table of Contents
 | >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     0 |
-| >= 10 to < 12      |     8 |
-| >= 12 to < 14      |     0 |
+| >= 10 to < 12      |     7 |
+| >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     4 |
 +--------------------+-------+
@@ -58,40 +58,40 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              90 |           23 |
-| No           | No                    | Yes                    |              51 |           13 |
+| No           | No                    | No                     |              88 |           25 |
+| No           | No                    | Yes                    |              51 |           12 |
 | No           | Yes                   | No                     |              61 |           25 |
-| Yes          | No                    | No                     |              74 |           15 |
-| Yes          | No                    | Yes                    |              20 |            7 |
-| Yes          | Yes                   | No                     |               2 |            1 |
+| Yes          | No                    | No                     |              74 |           13 |
+| Yes          | No                    | Yes                    |              20 |            6 |
+| Yes          | Yes                   | No                     |               2 |            2 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------+----------------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+--------------+
-|           Clock Signal          |                          Enable Signal                         |                      Set/Reset Signal                     | Slice Load Count | Bel Load Count | Bels / Slice |
-+---------------------------------+----------------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+--------------+
-|  instance_name/inst/clk_out2_5x | uihdmitx_inst/Inst_clk_oserdese3_10to1/                        |                                                           |                1 |              2 |         2.00 |
-|  instance_name/inst/clk_out     | tpg_inst/color_bar[16]_i_2_n_0                                 | tpg_inst/color_bar[16]_i_1_n_0                            |                1 |              2 |         2.00 |
-|  instance_name/inst/clk_out     | tpg_inst/p_0_in_0                                              | instance_name/inst/locked                                 |                1 |              3 |         3.00 |
-|  instance_name/inst/clk_out2_5x | uihdmitx_inst/Inst_d0_serializer_10_1/Inst_d0_serializer_10_1/ |                                                           |                2 |              4 |         2.00 |
-|  instance_name/inst/clk_out2_5x | uihdmitx_inst/Inst_d1_serializer_10_1/Inst_d1_serializer_10_1/ |                                                           |                2 |              4 |         2.00 |
-|  instance_name/inst/clk_out2_5x | uihdmitx_inst/Inst_d2_serializer_10_1/Inst_d2_serializer_10_1/ |                                                           |                2 |              4 |         2.00 |
-|  instance_name/inst/clk_out     | vtc_inst/E[0]                                                  | instance_name/inst/locked                                 |                2 |              6 |         3.00 |
-|  instance_name/inst/clk_out     |                                                                | uihdmitx_inst/Inst_TMDSEncoder_blue/q_out_d[9]_i_1__0_n_0 |                3 |             10 |         3.33 |
-|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d0_serializer_10_1/flag_i_1__1_n_0          |                                                           |                5 |             10 |         2.00 |
-|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d0_serializer_10_1/flag_reg_n_0             |                                                           |                4 |             10 |         2.50 |
-|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d1_serializer_10_1/flag_reg_n_0             |                                                           |                3 |             10 |         3.33 |
-|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d1_serializer_10_1/flag_i_1__0_n_0          |                                                           |                3 |             10 |         3.33 |
-|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d2_serializer_10_1/flag_reg_n_0             |                                                           |                4 |             10 |         2.50 |
-|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d2_serializer_10_1/flag_i_1_n_0             |                                                           |                3 |             10 |         3.33 |
-|  instance_name/inst/clk_out     | vtc_inst/v_cnt                                                 | instance_name/inst/locked                                 |                4 |             11 |         2.75 |
-|  instance_name/inst/clk_out2_5x |                                                                | uihdmitx_inst/Inst_clk_oserdese3_10to1/SR[0]              |                3 |             16 |         5.33 |
-|  instance_name/inst/clk_out     |                                                                | uihdmitx_inst/Inst_TMDSEncoder_red/de_dd                  |               18 |             32 |         1.78 |
-|  instance_name/inst/clk_out     |                                                                | instance_name/inst/locked                                 |               16 |             54 |         3.38 |
-|  instance_name/inst/clk_out     |                                                                |                                                           |               23 |             90 |         3.91 |
-+---------------------------------+----------------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+--------------+
++---------------------------------+----------------------------------------------------------------+----------------------------------------------------------------+------------------+----------------+--------------+
+|           Clock Signal          |                          Enable Signal                         |                        Set/Reset Signal                        | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------------+----------------------------------------------------------------+----------------------------------------------------------------+------------------+----------------+--------------+
+|  instance_name/inst/clk_out     | tpg_inst/color_bar[16]_i_2_n_0                                 | tpg_inst/color_bar[16]_i_1_n_0                                 |                2 |              2 |         1.00 |
+|  instance_name/inst/clk_out2_5x | uihdmitx_inst/Inst_clk_oserdese3_10to1/                        |                                                                |                1 |              2 |         2.00 |
+|  instance_name/inst/clk_out     | tpg_inst/p_0_in_0                                              | instance_name/inst/locked                                      |                1 |              3 |         3.00 |
+|  instance_name/inst/clk_out2_5x | uihdmitx_inst/Inst_d0_serializer_10_1/Inst_d0_serializer_10_1/ |                                                                |                1 |              4 |         4.00 |
+|  instance_name/inst/clk_out2_5x | uihdmitx_inst/Inst_d1_serializer_10_1/Inst_d1_serializer_10_1/ |                                                                |                2 |              4 |         2.00 |
+|  instance_name/inst/clk_out2_5x | uihdmitx_inst/Inst_d2_serializer_10_1/Inst_d2_serializer_10_1/ |                                                                |                1 |              4 |         4.00 |
+|  instance_name/inst/clk_out     | vtc_inst/E[0]                                                  | instance_name/inst/locked                                      |                2 |              6 |         3.00 |
+|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d0_serializer_10_1/flag_reg_n_0             |                                                                |                4 |             10 |         2.50 |
+|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d0_serializer_10_1/flag_i_1__1_n_0          |                                                                |                2 |             10 |         5.00 |
+|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d1_serializer_10_1/flag_i_1__0_n_0          |                                                                |                3 |             10 |         3.33 |
+|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d1_serializer_10_1/flag_reg_n_0             |                                                                |                3 |             10 |         3.33 |
+|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d2_serializer_10_1/flag_i_1_n_0             |                                                                |                4 |             10 |         2.50 |
+|  instance_name/inst/clk_out     | uihdmitx_inst/Inst_d2_serializer_10_1/flag_reg_n_0             |                                                                |                4 |             10 |         2.50 |
+|  instance_name/inst/clk_out     | vtc_inst/v_cnt                                                 | instance_name/inst/locked                                      |                3 |             11 |         3.67 |
+|  instance_name/inst/clk_out     |                                                                | uihdmitx_inst/Inst_TMDSEncoder_red/Inst_TMDSEncoder_blue/de_dd |               11 |             12 |         1.09 |
+|  instance_name/inst/clk_out2_5x |                                                                | instance_name/inst/locked                                      |                4 |             16 |         4.00 |
+|  instance_name/inst/clk_out     |                                                                | uihdmitx_inst/Inst_TMDSEncoder_red/de_dd_reg_0[0]              |               10 |             30 |         3.00 |
+|  instance_name/inst/clk_out     |                                                                | instance_name/inst/locked                                      |               15 |             54 |         3.60 |
+|  instance_name/inst/clk_out     |                                                                |                                                                |               25 |             88 |         3.52 |
++---------------------------------+----------------------------------------------------------------+----------------------------------------------------------------+------------------+----------------+--------------+
 
 

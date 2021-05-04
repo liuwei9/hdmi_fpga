@@ -23,13 +23,13 @@ Signal description£º
 
 
 module oserdese3_10to1(
-input [9:0] txdata,    // 7-bit pixel data
-input       txrst,      // Reset for pixel logic synchronus to pclk
-input       pclk,       // Pixel clock running at 1/7 transmit rate
-input       clkdiv2,    // Transmit clock running at 1/2 transmit rate
-input       clkdiv4,    // Transmit clock running at 1/4 transmit rate
-output      tx_p,      // Transmit output P-side
-output      tx_n       // Transmit output N-side
+input [9:0] txdata,    
+input       txrst,     
+input       pclk,      
+input       pclk5x,    
+input       pclk2_5x,   
+output      tx_p,     
+output      tx_n       
 );
 reg  [3:0]  tx_data;
 wire        oserdes_out;   
@@ -54,12 +54,12 @@ end
 reg rstq,rstqq;
 always @(posedge pclk)begin
     rstq <= txrst;
-    rstqq <= rstq;
+    rstqq <= txrst;
 end
 
 reg [3:0] count;
-always @(posedge clkdiv4)begin
-    if(rstqq)begin
+always @(posedge pclk2_5x)begin
+    if(txrst)begin
         count <= 4'd0;
     end else if(count == 4'd4)begin 
         count <= 4'd0;
@@ -68,7 +68,7 @@ always @(posedge clkdiv4)begin
     end
 end
 
-always @(posedge clkdiv4)begin
+always @(posedge pclk2_5x)begin
     case(count)
         4'd0:begin
             tx_data <= data_1[3:0];
@@ -102,10 +102,10 @@ OSERDESE3 #(
    OSERDESE3_inst (
       .OQ(oserdes_out),         // 1-bit output: Serial Output Data
       .T_OUT(),   // 1-bit output: 3-state control output to IOB
-      .CLK(clkdiv2),       // 1-bit input: High-speed clock
-      .CLKDIV(clkdiv4), // 1-bit input: Divided Clock
+      .CLK(pclk5x),       // 1-bit input: High-speed clock
+      .CLKDIV(pclk2_5x), // 1-bit input: Divided Clock
       .D({4'd0,tx_data}),           // 8-bit input: Parallel Data Input
-      .RST(rstqq),       // 1-bit input: Asynchronous Reset
+      .RST(txrst),       // 1-bit input: Asynchronous Reset
       .T(1'b0)            // 1-bit input: Tristate input from fabric
    );
  
