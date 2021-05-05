@@ -110,6 +110,7 @@ wire clk_in2_clk_wiz_0;
   wire        psdone_unused;
   wire        locked_int;
   wire        clkfbout_clk_wiz_0;
+  wire        clkfbout_buf_clk_wiz_0;
   wire        clkfboutb_unused;
     wire clkout0b_unused;
    wire clkout1b_unused;
@@ -165,7 +166,7 @@ wire clk_in2_clk_wiz_0;
     .CLKOUT5             (clkout5_unused),
     .CLKOUT6             (clkout6_unused),
      // Input clock control
-    .CLKFBIN             (clkfbout_clk_wiz_0),
+    .CLKFBIN             (clkfbout_buf_clk_wiz_0),
     .CLKIN1              (clk_in1_clk_wiz_0),
     .CLKIN2              (1'b0),
      // Tied to always select the primary input clock
@@ -198,6 +199,10 @@ wire clk_in2_clk_wiz_0;
 //--------------------------------------
  // Output buffering
   //-----------------------------------
+
+  BUFG clkf_buf
+   (.O (clkfbout_buf_clk_wiz_0),
+    .I (clkfbout_clk_wiz_0));
 
 
 

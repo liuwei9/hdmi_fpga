@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Sun Jan 17 20:31:45 2021
-// Host        : LAPTOP-43UBS83S running 64-bit major release  (build 9200)
+// Date        : Wed May  5 18:10:53 2021
+// Host        : LAPTOP-POK8F54O running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               e:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
+//               d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
 // Design      : clk_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -66,12 +66,12 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   wire clk_out5x;
   wire clk_out5x_clk_wiz_0;
   wire clk_out_clk_wiz_0;
+  wire clkfbout_buf_clk_wiz_0;
+  wire clkfbout_clk_wiz_0;
   wire locked;
   wire reset_high;
   wire resetn;
   wire NLW_mmcme3_adv_inst_CDDCDONE_UNCONNECTED;
-  wire NLW_mmcme3_adv_inst_CLKFBIN_UNCONNECTED;
-  wire NLW_mmcme3_adv_inst_CLKFBOUT_UNCONNECTED;
   wire NLW_mmcme3_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcme3_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcme3_adv_inst_CLKINSTOPPED_UNCONNECTED;
@@ -87,6 +87,15 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   wire NLW_mmcme3_adv_inst_PSDONE_UNCONNECTED;
   wire [15:0]NLW_mmcme3_adv_inst_DO_UNCONNECTED;
 
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  (* XILINX_LEGACY_PRIM = "BUFG" *) 
+  BUFGCE #(
+    .CE_TYPE("ASYNC"),
+    .SIM_DEVICE("ULTRASCALE")) 
+    clkf_buf
+       (.CE(1'b1),
+        .I(clkfbout_clk_wiz_0),
+        .O(clkfbout_buf_clk_wiz_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* XILINX_LEGACY_PRIM = "BUFG" *) 
   BUFGCE #(
@@ -124,7 +133,6 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .I(clk_out5x_clk_wiz_0),
         .O(clk_out5x));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  (* OPT_MODIFIED = "MLO" *) 
   MMCME3_ADV #(
     .BANDWIDTH("OPTIMIZED"),
     .CLKFBOUT_MULT_F(9.750000),
@@ -161,7 +169,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
     .CLKOUT6_DUTY_CYCLE(0.500000),
     .CLKOUT6_PHASE(0.000000),
     .CLKOUT6_USE_FINE_PS("FALSE"),
-    .COMPENSATION("INTERNAL"),
+    .COMPENSATION("BUF_IN"),
     .DIVCLK_DIVIDE(1),
     .IS_CLKFBIN_INVERTED(1'b0),
     .IS_CLKIN1_INVERTED(1'b0),
@@ -180,8 +188,8 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
     mmcme3_adv_inst
        (.CDDCDONE(NLW_mmcme3_adv_inst_CDDCDONE_UNCONNECTED),
         .CDDCREQ(1'b0),
-        .CLKFBIN(NLW_mmcme3_adv_inst_CLKFBIN_UNCONNECTED),
-        .CLKFBOUT(NLW_mmcme3_adv_inst_CLKFBOUT_UNCONNECTED),
+        .CLKFBIN(clkfbout_buf_clk_wiz_0),
+        .CLKFBOUT(clkfbout_clk_wiz_0),
         .CLKFBOUTB(NLW_mmcme3_adv_inst_CLKFBOUTB_UNCONNECTED),
         .CLKFBSTOPPED(NLW_mmcme3_adv_inst_CLKFBSTOPPED_UNCONNECTED),
         .CLKIN1(clk_in1_clk_wiz_0),

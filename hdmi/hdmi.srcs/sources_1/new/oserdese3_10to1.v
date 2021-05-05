@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-/*
-Company : Liyang Milian Electronic Technology Co., Ltd.
-Brand: Ã×Áª¿Í(msxbo)
-Technical forum£ºuisrc.com
-taobao: osrc.taobao.com
-Create Date: 2019/12/17
-Module Name: oserdese3_10to1
-Description: 
-10: 1 serial transceiver
-Copyright: Copyright (c) msxbo
-Revision: 1.0
-Signal description£º
-1) _i input
-2) _o output
-3) _n activ low
-4) _dg debug signal 
-5) _r delay or register
-6) _s state mechine
-*/
-////////////////////////////////////////////////////////////////////////////////
 
 
 module oserdese3_10to1(
@@ -51,15 +30,25 @@ always @(posedge pclk)begin
         data_2 <= txdata;
     end
 end
+reg [9:0] data_1_q;
+reg [9:0] data_1_qq;
+reg [9:0] data_2_q;
+reg [9:0] data_2_qq;
+always @(posedge pclk2_5x)begin 
+    data_1_q <= data_1;
+    data_1_qq <= data_1_q;
+    data_2_q <= data_2;
+    data_2_qq <= data_2_q;
+end
 reg rstq,rstqq;
-always @(posedge pclk)begin
+always @(posedge pclk2_5x)begin
     rstq <= txrst;
-    rstqq <= txrst;
+    rstqq <= rstq;
 end
 
 reg [3:0] count;
 always @(posedge pclk2_5x)begin
-    if(txrst)begin
+    if(rstqq)begin
         count <= 4'd0;
     end else if(count == 4'd4)begin 
         count <= 4'd0;
@@ -71,19 +60,19 @@ end
 always @(posedge pclk2_5x)begin
     case(count)
         4'd0:begin
-            tx_data <= data_1[3:0];
+            tx_data <= data_1_qq[3:0];
         end
         4'd1:begin
-            tx_data <= data_1[7:4];
+            tx_data <= data_1_qq[7:4];
         end
         4'd2:begin
-            tx_data <= {data_2[1:0],data_1[9:8]};
+            tx_data <= {data_2_qq[1:0],data_1_qq[9:8]};
         end
         4'd3:begin
-            tx_data <= data_2[5:2];
+            tx_data <= data_2_qq[5:2];
         end
         4'd4:begin
-            tx_data <= data_2[9:6];
+            tx_data <= data_2_qq[9:6];
         end
         default:begin 
             tx_data <= tx_data;
@@ -105,7 +94,7 @@ OSERDESE3 #(
       .CLK(pclk5x),       // 1-bit input: High-speed clock
       .CLKDIV(pclk2_5x), // 1-bit input: Divided Clock
       .D({4'd0,tx_data}),           // 8-bit input: Parallel Data Input
-      .RST(txrst),       // 1-bit input: Asynchronous Reset
+      .RST(rstqq),       // 1-bit input: Asynchronous Reset
       .T(1'b0)            // 1-bit input: Tristate input from fabric
    );
  
@@ -113,6 +102,15 @@ OBUFDS io_clk_out (
     .I        (oserdes_out),
     .O        (tx_p),
     .OB       (tx_n));
+//ila_0 your_instance_name (
+//	.clk(pclk), // input wire clk
 
+
+//	.probe0(txdata), // input wire [9:0]  probe0  
+//	.probe1(tx_data) // input wire [4:0]  probe1 
+//	.probe2(rstqq), // input wire [0:0]  probe2 
+//	.probe3(txrst), // input wire [0:0]  probe3 
+//	.probe4(flag) // input wire [0:0]  probe4
+//);
 endmodule
   

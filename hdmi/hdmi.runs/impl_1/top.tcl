@@ -123,7 +123,6 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
-  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xcku040-ffva1156-2-i
   set_property design_mode GateLvl [current_fileset]
@@ -141,6 +140,7 @@ OPTRACE "add files" START { }
   read_ip -quiet D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc
+  read_xdc D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.sdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

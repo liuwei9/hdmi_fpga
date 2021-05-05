@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Sun Jan 17 20:31:45 2021
--- Host        : LAPTOP-43UBS83S running 64-bit major release  (build 9200)
+-- Date        : Wed May  5 18:10:53 2021
+-- Host        : LAPTOP-POK8F54O running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               e:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
+--               d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
 -- Design      : clk_wiz_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -32,10 +32,10 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   signal clk_out2_5x_clk_wiz_0 : STD_LOGIC;
   signal clk_out5x_clk_wiz_0 : STD_LOGIC;
   signal clk_out_clk_wiz_0 : STD_LOGIC;
+  signal clkfbout_buf_clk_wiz_0 : STD_LOGIC;
+  signal clkfbout_clk_wiz_0 : STD_LOGIC;
   signal reset_high : STD_LOGIC;
   signal NLW_mmcme3_adv_inst_CDDCDONE_UNCONNECTED : STD_LOGIC;
-  signal NLW_mmcme3_adv_inst_CLKFBIN_UNCONNECTED : STD_LOGIC;
-  signal NLW_mmcme3_adv_inst_CLKFBOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme3_adv_inst_CLKFBOUTB_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme3_adv_inst_CLKFBSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme3_adv_inst_CLKINSTOPPED_UNCONNECTED : STD_LOGIC;
@@ -51,8 +51,10 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   signal NLW_mmcme3_adv_inst_PSDONE_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme3_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
-  attribute BOX_TYPE of clkin1_bufg : label is "PRIMITIVE";
+  attribute BOX_TYPE of clkf_buf : label is "PRIMITIVE";
   attribute XILINX_LEGACY_PRIM : string;
+  attribute XILINX_LEGACY_PRIM of clkf_buf : label is "BUFG";
+  attribute BOX_TYPE of clkin1_bufg : label is "PRIMITIVE";
   attribute XILINX_LEGACY_PRIM of clkin1_bufg : label is "BUFG";
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
   attribute XILINX_LEGACY_PRIM of clkout1_buf : label is "BUFG";
@@ -61,9 +63,17 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   attribute BOX_TYPE of clkout3_buf : label is "PRIMITIVE";
   attribute XILINX_LEGACY_PRIM of clkout3_buf : label is "BUFG";
   attribute BOX_TYPE of mmcme3_adv_inst : label is "PRIMITIVE";
-  attribute OPT_MODIFIED : string;
-  attribute OPT_MODIFIED of mmcme3_adv_inst : label is "MLO";
 begin
+clkf_buf: unisim.vcomponents.BUFGCE
+    generic map(
+      CE_TYPE => "ASYNC",
+      SIM_DEVICE => "ULTRASCALE"
+    )
+        port map (
+      CE => '1',
+      I => clkfbout_clk_wiz_0,
+      O => clkfbout_buf_clk_wiz_0
+    );
 clkin1_bufg: unisim.vcomponents.BUFGCE
     generic map(
       CE_TYPE => "ASYNC",
@@ -141,7 +151,7 @@ mmcme3_adv_inst: unisim.vcomponents.MMCME3_ADV
       CLKOUT6_DUTY_CYCLE => 0.500000,
       CLKOUT6_PHASE => 0.000000,
       CLKOUT6_USE_FINE_PS => "FALSE",
-      COMPENSATION => "INTERNAL",
+      COMPENSATION => "BUF_IN",
       DIVCLK_DIVIDE => 1,
       IS_CLKFBIN_INVERTED => '0',
       IS_CLKIN1_INVERTED => '0',
@@ -161,8 +171,8 @@ mmcme3_adv_inst: unisim.vcomponents.MMCME3_ADV
         port map (
       CDDCDONE => NLW_mmcme3_adv_inst_CDDCDONE_UNCONNECTED,
       CDDCREQ => '0',
-      CLKFBIN => NLW_mmcme3_adv_inst_CLKFBIN_UNCONNECTED,
-      CLKFBOUT => NLW_mmcme3_adv_inst_CLKFBOUT_UNCONNECTED,
+      CLKFBIN => clkfbout_buf_clk_wiz_0,
+      CLKFBOUT => clkfbout_clk_wiz_0,
       CLKFBOUTB => NLW_mmcme3_adv_inst_CLKFBOUTB_UNCONNECTED,
       CLKFBSTOPPED => NLW_mmcme3_adv_inst_CLKFBSTOPPED_UNCONNECTED,
       CLKIN1 => clk_in1_clk_wiz_0,

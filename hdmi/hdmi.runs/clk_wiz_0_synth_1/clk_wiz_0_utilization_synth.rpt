@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sun Jan 17 20:31:45 2021
-| Host         : LAPTOP-43UBS83S running 64-bit major release  (build 9200)
+| Date         : Wed May  5 18:10:53 2021
+| Host         : LAPTOP-POK8F54O running 64-bit major release  (build 9200)
 | Command      : report_utilization -file clk_wiz_0_utilization_synth.rpt -pb clk_wiz_0_utilization_synth.pb
 | Design       : clk_wiz_0
 | Device       : xcku040ffva1156-2
@@ -103,8 +103,8 @@ Table of Contents
 +----------------------+------+-------+-----------+-------+
 |       Site Type      | Used | Fixed | Available | Util% |
 +----------------------+------+-------+-----------+-------+
-| GLOBAL CLOCK BUFFERs |    4 |     0 |       480 |  0.83 |
-|   BUFGCE             |    4 |     0 |       240 |  1.67 |
+| GLOBAL CLOCK BUFFERs |    5 |     0 |       480 |  1.04 |
+|   BUFGCE             |    5 |     0 |       240 |  2.08 |
 |   BUFGCE_DIV         |    0 |     0 |        40 |  0.00 |
 |   BUFG_GT            |    0 |     0 |       120 |  0.00 |
 |   BUFGCTRL*          |    0 |     0 |        80 |  0.00 |
@@ -152,7 +152,7 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| BUFGCE     |    4 |               Clock |
+| BUFGCE     |    5 |               Clock |
 | MMCME3_ADV |    1 |               Clock |
 | LUT1       |    1 |                 CLB |
 +------------+------+---------------------+

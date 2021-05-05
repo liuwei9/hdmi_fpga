@@ -10,3 +10,7 @@ set_property PACKAGE_PIN N24 [get_ports HDMI_CLK_P]
 set_property IOSTANDARD TMDS_33 [get_ports HDMI_CLK_P]
 set_property PACKAGE_PIN AK30 [get_ports rstn_i]
 set_property IOSTANDARD LVCMOS12 [get_ports rstn_i]
+#create_clock -period 10.000 -name sys_clk [get_ports clk_i]
+create_clock -period 10.000 -name sys_clk [get_ports clk_i]
+
+set_clock_groups -name test -asynchronous -group [get_clocks *]
