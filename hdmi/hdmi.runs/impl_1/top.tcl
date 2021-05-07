@@ -138,9 +138,9 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/hdmi_fpga/hdmi/hdmi.runs/synth_1/top.dcp
   read_ip -quiet D:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc
-  read_xdc D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.sdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

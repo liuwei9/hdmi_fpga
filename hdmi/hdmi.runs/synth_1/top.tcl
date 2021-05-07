@@ -100,6 +100,11 @@ set_property used_in_implementation false [get_files -all d:/hdmi_fpga/hdmi/hdmi
 set_property used_in_implementation false [get_files -all d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
+read_ip -quiet d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
+set_property used_in_implementation false [get_files -all d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1_board.xdc]
+set_property used_in_implementation false [get_files -all d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xdc]
+set_property used_in_implementation false [get_files -all d:/hdmi_fpga/hdmi/hdmi.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -111,9 +116,6 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc
 set_property used_in_implementation false [get_files D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.xdc]
-
-read_xdc D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.sdc
-set_property used_in_implementation false [get_files D:/hdmi_fpga/hdmi/hdmi.srcs/constrs_1/new/hdmi.sdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

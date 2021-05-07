@@ -23,12 +23,14 @@
 module top(
 input rstn_i,
 input clk_i,
+input clk_i_1,
 output HDMI_CLK_P,
 output HDMI_CLK_N,
 output [2:0]HDMI_TX_P,
 output [2:0]HDMI_TX_N
     );
 wire locked;
+wire locked5x;
 wire clk_out, clk_out2_5x, clk_out5x;
 
 wire vtc_vs_o,vtc_hs_o,vtc_de_o;  
@@ -46,7 +48,7 @@ wire vtc_vs_o,vtc_hs_o,vtc_de_o;
 vtc_inst
 (
 .vtc_clk_i     (clk_out),
-.vtc_rstn_i    (locked),
+.vtc_rstn_i    (locked | locked5x),
 .vtc_hs_o      (vtc_hs_o),
 .vtc_vs_o      (vtc_vs_o),
 .vtc_de_o      (vtc_de_o)
@@ -57,7 +59,7 @@ wire [23:0] tpg_data_o;
 
 tpg tpg_inst(
 .tpg_clk_i       (clk_out),
-.tpg_rstn_i      (locked),
+.tpg_rstn_i      (locked | locked5x),
 .tpg_hs_i        (vtc_hs_o),
 .tpg_vs_i        (vtc_vs_o),
 .tpg_de_i        (vtc_de_o),
@@ -68,7 +70,7 @@ tpg tpg_inst(
     );
 uihdmitx uihdmitx_inst
 (
-.RSTn_i(locked),
+.RSTn_i(locked | locked5x),
 .HS_i(vtc_hs_o),
 .VS_i(vtc_vs_o),
 .VDE_i(vtc_de_o),
@@ -87,10 +89,19 @@ uihdmitx uihdmitx_inst
     // Clock out ports
     .clk_out(clk_out),     // output clk_out
     .clk_out2_5x(clk_out2_5x),     // output clk_out2_5x
-    .clk_out5x(clk_out5x),     // output clk_out5x
     // Status and control signals
     .resetn(rstn_i), // input resetn
     .locked(locked),       // output locked
    // Clock in ports
     .clk_in1(clk_i));      // input clk_in1
+    
+    clk_wiz_1 clk1
+   (
+    // Clock out ports
+    .clk_out5x(clk_out5x),     // output clk_out5x
+    // Status and control signals
+    .reset(~rstn_i), // input reset
+    .locked(locked5x),       // output locked
+   // Clock in ports
+    .clk_in1(clk_i_1));      // input clk_in1
 endmodule

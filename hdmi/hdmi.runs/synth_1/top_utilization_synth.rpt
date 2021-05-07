@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed May  5 21:03:41 2021
+| Date         : Fri May  7 09:49:27 2021
 | Host         : LAPTOP-POK8F54O running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -31,8 +31,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| CLB LUTs*               |  295 |     0 |    242400 |  0.12 |
-|   LUT as Logic          |  295 |     0 |    242400 |  0.12 |
+| CLB LUTs*               |  293 |     0 |    242400 |  0.12 |
+|   LUT as Logic          |  293 |     0 |    242400 |  0.12 |
 |   LUT as Memory         |    0 |     0 |    112800 |  0.00 |
 | CLB Registers           |  418 |     0 |    484800 |  0.09 |
 |   Register as Flip Flop |  418 |     0 |    484800 |  0.09 |
@@ -93,7 +93,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| Bonded IOB |   10 |     0 |       520 |  1.92 |
+| Bonded IOB |    9 |     0 |       520 |  1.73 |
 +------------+------+-------+-----------+-------+
 
 
@@ -153,20 +153,20 @@ Table of Contents
 |  Ref Name | Used | Functional Category |
 +-----------+------+---------------------+
 | FDRE      |  331 |            Register |
-| LUT6      |  127 |                 CLB |
-| LUT5      |   95 |                 CLB |
+| LUT6      |  125 |                 CLB |
+| LUT5      |   98 |                 CLB |
 | FDCE      |   71 |            Register |
-| LUT3      |   62 |                 CLB |
-| LUT4      |   52 |                 CLB |
-| LUT2      |   21 |                 CLB |
+| LUT3      |   63 |                 CLB |
+| LUT4      |   50 |                 CLB |
+| LUT2      |   18 |                 CLB |
 | FDSE      |   16 |            Register |
 | LUT1      |    9 |                 CLB |
 | OBUF      |    8 |                 I/O |
 | OSERDESE3 |    4 |                 I/O |
 | INV       |    4 |                 CLB |
-| INBUF     |    2 |                 I/O |
-| IBUFCTRL  |    2 |              Others |
 | MUXF7     |    1 |                 CLB |
+| INBUF     |    1 |                 I/O |
+| IBUFCTRL  |    1 |              Others |
 +-----------+------+---------------------+
 
 
@@ -176,6 +176,7 @@ Table of Contents
 +-----------+------+
 |  Ref Name | Used |
 +-----------+------+
+| clk_wiz_1 |    1 |
 | clk_wiz_0 |    1 |
 +-----------+------+
 

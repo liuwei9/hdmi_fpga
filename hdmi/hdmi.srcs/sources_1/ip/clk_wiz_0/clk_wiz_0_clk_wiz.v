@@ -58,7 +58,6 @@
 //----------------------------------------------------------------------------
 // _clk_out__65.00000______0.000______50.0______142.278_____99.281
 // clk_out2_5x__162.50000______0.000______50.0______118.618_____99.281
-// clk_out5x__325.00000______0.000______50.0______104.357_____99.281
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -73,7 +72,6 @@ module clk_wiz_0_clk_wiz
   // Clock out ports
   output        clk_out,
   output        clk_out2_5x,
-  output        clk_out5x,
   // Status and control signals
   input         resetn,
   output        locked,
@@ -83,7 +81,7 @@ module clk_wiz_0_clk_wiz
   //------------------------------------
 wire clk_in1_clk_wiz_0;
 wire clk_in2_clk_wiz_0;
-  BUFG clkin1_bufg
+  IBUF clkin1_ibuf
    (.O (clk_in1_clk_wiz_0),
     .I (clk_in1));
 
@@ -114,6 +112,7 @@ wire clk_in2_clk_wiz_0;
   wire        clkfboutb_unused;
     wire clkout0b_unused;
    wire clkout1b_unused;
+   wire clkout2_unused;
    wire clkout2b_unused;
    wire clkout3_unused;
    wire clkout3b_unused;
@@ -144,10 +143,6 @@ wire clk_in2_clk_wiz_0;
     .CLKOUT1_PHASE        (0.000),
     .CLKOUT1_DUTY_CYCLE   (0.500),
     .CLKOUT1_USE_FINE_PS  ("FALSE"),
-    .CLKOUT2_DIVIDE       (3),
-    .CLKOUT2_PHASE        (0.000),
-    .CLKOUT2_DUTY_CYCLE   (0.500),
-    .CLKOUT2_USE_FINE_PS  ("FALSE"),
     .CLKIN1_PERIOD        (10.000))
   mmcme3_adv_inst
     // Output clocks
@@ -158,7 +153,7 @@ wire clk_in2_clk_wiz_0;
     .CLKOUT0B            (clkout0b_unused),
     .CLKOUT1             (clk_out2_5x_clk_wiz_0),
     .CLKOUT1B            (clkout1b_unused),
-    .CLKOUT2             (clk_out5x_clk_wiz_0),
+    .CLKOUT2             (clkout2_unused),
     .CLKOUT2B            (clkout2b_unused),
     .CLKOUT3             (clkout3_unused),
     .CLKOUT3B            (clkout3b_unused),
@@ -217,10 +212,6 @@ wire clk_in2_clk_wiz_0;
   BUFG clkout2_buf
    (.O   (clk_out2_5x),
     .I   (clk_out2_5x_clk_wiz_0));
-
-  BUFG clkout3_buf
-   (.O   (clk_out5x),
-    .I   (clk_out5x_clk_wiz_0));
 
 
 
